@@ -316,7 +316,7 @@ class HomePageGrid extends StatelessWidget {
 // But in View field, we have to return Widget class , so we have to wrap them(NetworkImage & AssetImage) to be Widget type
 // network image version
 class HomePage8 extends StatelessWidget {
-  final String FakeUrl = "https://picsum.photos/200";
+  final String fakeUrl = "https://picsum.photos/200";
   @override
   Widget build(BuildContext context) {
     debugPaintSizeEnabled = true; // 可開啟debug模式來看到圖片或者邊界線在模擬手機上呈現
@@ -326,7 +326,7 @@ class HomePage8 extends StatelessWidget {
         title: Text("Image Demo"),
       ),
       body: Image.network(
-        FakeUrl,
+        fakeUrl,
         height: 200,
         alignment: Alignment.topCenter, // 圖片對齊的方式
         fit: BoxFit.cover,
@@ -354,6 +354,7 @@ class HomePage9 extends StatelessWidget {
 }
 
 // BottomNavigationBar
+// ignore: must_be_immutable
 class HomePageBottomNavigationBar extends StatelessWidget {
   // 因為是StatelessWidet不會動,所以要改用StatefulWidget,下面示例
   int index;

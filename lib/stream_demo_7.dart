@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 // create Stream method 1
 
 // Stream.fromFuture(Future future) : single Future
-final stream_single =
+final streamSingle =
     Stream.fromFuture(Future.delayed(Duration(seconds: 1), () => print(100)));
 
 // Stream.fromFutures(Iterable<Future> futures) : List<Future<int>>...etc
 List<Future<int>> generateListFutures() =>
     List<Future<int>>.generate(10, (index) => Future.value(100));
-final stream_FutureList = Stream.fromFutures(generateListFutures());
+final streamFutureList = Stream.fromFutures(generateListFutures());
 
 // Stream.fromIterable(Iterable element) : List<int>.generate()
-final stream_list =
+final streamList =
     Stream.fromIterable(List<int>.generate(100, (index) => index * 10));
 
 // create Stream method 2 : async* + yield
@@ -92,7 +92,7 @@ singleStream() {
   Stream streamA = controller.stream;
 
   // 3. bind the stream on the controller by calling listen func
-  streamA.listen((value) => print("A value is ${value}"));
+  streamA.listen((value) => print("A value is $value"));
 
   // 4. emit/add  the value on the controller
   controller.sink.add(123);
@@ -111,8 +111,8 @@ broadcastStream() {
   Stream streamA = controller.stream.asBroadcastStream();
 
   // 3. bind the stream on the controller by calling listen func
-  streamA.listen((value) => print("A value is ${value}"));
-  streamA.listen((value) => print("BBB value is ${value}"));
+  streamA.listen((value) => print("A value is $value"));
+  streamA.listen((value) => print("BBB value is $value"));
 
   // 4. emit/add  the value on the controller
   controller.sink.add(123);

@@ -29,7 +29,7 @@ _loadDataGet() async {
     print(_responseText);
     client.close(); // 使用後，一定要用close方法關閉
   } catch (error) {
-    print("Request exception:${error}");
+    print("Request exception:$error");
   }
 }
 
@@ -53,6 +53,6 @@ _loadDataPost() async {
     print(_responseText);
     client.close(); // 使用後，一定要用close方法關閉
   } catch (error) {
-    print("post error: ${error}");
+    print("post error: $error");
   }
 }
